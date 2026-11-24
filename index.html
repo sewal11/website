@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Personal Sanctuary — Visual Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Linen grain SVG filter for tactile texture -->
+  <svg class="texture-filter-svg" aria-hidden="true" width="0" height="0">
+    <defs>
+      <filter id="linen-grain" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0.1   0 0 0 0 0.1   0 0 0 0 0.1   0 0 0 0.04 0" />
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="linen-texture-overlay"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#home" class="brand">
+        <div class="brand-mascot-preview">
+          <!-- Mascot Mini SVG -->
+          <svg viewBox="0 0 100 100" class="mini-owl-icon" aria-hidden="true">
+            <rect width="100" height="100" rx="50" fill="#F4EFE6" />
+            <!-- Silhouette -->
+            <path d="M50 16 C34 16, 26 28, 26 50 C26 72, 34 84, 50 84 C66 84, 74 72, 74 50 C74 28, 66 16, 50 16 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="2.2" />
+            <!-- Ears / Brow -->
+            <path d="M34 26 L27 18 L38 23" fill="#E29D82" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M66 26 L73 18 L62 23" fill="#E29D82" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Eyes -->
+            <circle cx="41" cy="40" r="9" fill="#FAF7F2" stroke="#1C1917" stroke-width="2" />
+            <circle cx="41" cy="40" r="4.5" fill="#E0B589" />
+            <circle cx="42" cy="39" r="2.2" fill="#1C1917" />
+            <circle cx="59" cy="40" r="9" fill="#FAF7F2" stroke="#1C1917" stroke-width="2" />
+            <circle cx="59" cy="40" r="4.5" fill="#E0B589" />
+            <circle cx="60" cy="39" r="2.2" fill="#1C1917" />
+            <!-- Beak -->
+            <polygon points="50,47 46,55 54,55" fill="#D88A6E" stroke="#1C1917" stroke-width="1.8" />
+            <!-- Chest feather marks -->
+            <path d="M44 64 Q50 67 56 64" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M42 71 Q50 74 58 71" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="brand-title">Atelier Nocture</span>
+      </a>
+
+      <nav class="site-nav">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact" class="nav-cta">Say Hello</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero Cover Banner Section (16:9) -->
+    <section class="hero-section container">
+      <div class="cover-image-wrapper">
+        <!-- Cover SVG (16:9 panoramic landscape) -->
+        <svg viewBox="0 0 1200 675" class="cover-svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Minimalist 16:9 landscape illustration with rolling hills, a warm sun, and botanical branch">
+          <!-- Canvas Background -->
+          <rect width="1200" height="675" fill="#F4EFE6" />
+          
+          <!-- Soft Chalk Color Blocks in Background -->
+          <circle cx="860" cy="260" r="140" fill="#E8A882" opacity="0.85" />
+          <path d="M0 450 C300 420, 500 500, 750 440 C950 390, 1100 430, 1200 410 L1200 675 L0 675 Z" fill="#EAE3D6" />
+          
+          <!-- Midground Hill with Soft Sage Wash -->
+          <path d="M-50 480 Q250 380, 550 460 T1150 420 L1250 675 L-50 675 Z" fill="#9AA685" opacity="0.3" />
+          <path d="M-50 480 Q250 380, 550 460 T1150 420" fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+
+          <!-- Foreground Crisp Chalk White Hill -->
+          <path d="M150 675 C300 520, 600 480, 900 540 C1050 570, 1180 520, 1250 510 L1250 675 Z" fill="#FAF7F2" />
+          <path d="M150 675 C300 520, 600 480, 900 540 C1050 570, 1180 520, 1250 510" fill="none" stroke="#1C1917" stroke-width="2.2" stroke-linecap="round" />
+
+          <!-- Minimalist Architectural & Nature Vignette -->
+          <!-- Abstract Arch on Hill -->
+          <path d="M420 480 V370 C420 320, 490 320, 490 370 V480" fill="#FAF7F2" stroke="#1C1917" stroke-width="2" />
+          <line x1="400" y1="480" x2="510" y2="480" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+
+          <!-- Elegant Botanical Branch in Foreground -->
+          <path d="M220 675 C240 560, 270 480, 310 390" fill="none" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round" />
+          
+          <!-- Leaves with chalk fills & ink strokes -->
+          <path d="M245 565 C220 545, 230 525, 255 535 C280 545, 260 575, 245 565 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8" />
+          <path d="M260 515 C290 495, 305 515, 285 530 C265 545, 245 525, 260 515 Z" fill="#D88A6E" opacity="0.9" stroke="#1C1917" stroke-width="1.8" />
+          <path d="M280 460 C260 440, 265 420, 290 430 C315 440, 300 470, 280 460 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8" />
+          <path d="M298 420 C330 405, 335 430, 318 440 C301 450, 285 430, 298 420 Z" fill="#9AA685" opacity="0.85" stroke="#1C1917" stroke-width="1.8" />
+          <path d="M310 390 C310 365, 330 365, 335 385 C340 405, 320 405, 310 390 Z" fill="#E0B589" stroke="#1C1917" stroke-width="1.8" />
+
+          <!-- Tiny Delicate Birds in Sky (minimal ink gestures) -->
+          <path d="M680 280 Q690 274 700 280 Q710 274 720 280" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" />
+          <path d="M725 255 Q733 250 741 255 Q749 250 757 255" fill="none" stroke="#1C1917" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+
+        <div class="cover-overlay-tag">
+          <span class="badge-dot"></span>
+          <span>Serenity in Line & Form</span>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">Quiet thoughts, thoughtful systems, and tactile digital craft.</h1>
+        <p class="hero-subtitle">
+          A personal collection of essays, selected architecture notes, and minimal experiments—curated with intention, warm tones, and calm clarity.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">Explore Works</a>
+          <a href="#about" class="btn btn-outline">Meet the Mascot</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section with Mascot Showcase -->
+    <section id="about" class="about-section container">
+      <div class="about-grid">
+        <!-- Mascot Showcase Card (Square) -->
+        <div class="mascot-card-wrapper">
+          <div class="mascot-frame">
+            <!-- Full Mascot SVG (Square 1:1) -->
+            <svg viewBox="0 0 400 400" class="mascot-full-svg" role="img" aria-label="Geometric minimalist owl mascot">
+              <!-- Background -->
+              <rect width="400" height="400" fill="#F4EFE6" rx="16" />
+              
+              <!-- Subtle Linen Line Accent -->
+              <circle cx="200" cy="200" r="150" fill="none" stroke="#E5DEC9" stroke-width="1.5" stroke-dasharray="3 6" />
+
+              <!-- Shadow / Base Shape -->
+              <ellipse cx="200" cy="342" rx="70" ry="8" fill="#E3DACB" />
+
+              <!-- Owl Body (Minimal Capsule/Shield) -->
+              <path d="M200 80 C130 80, 105 130, 105 220 C105 310, 140 335, 200 335 C260 335, 295 310, 295 220 C295 130, 270 80, 200 80 Z" 
+                    fill="#FFFFFF" stroke="#1C1917" stroke-width="3" />
+
+              <!-- Left Wing Shape (Muted Sage & Chalk Wash) -->
+              <path d="M106 210 C106 270, 130 310, 160 318 C140 280, 130 240, 134 190 Z" 
+                    fill="#9AA685" opacity="0.6" stroke="#1C1917" stroke-width="2.4" stroke-linejoin="round" />
+
+              <!-- Right Wing Shape (Muted Terracotta & Chalk Wash) -->
+              <path d="M294 210 C294 270, 270 310, 240 318 C260 280, 270 240, 266 190 Z" 
+                    fill="#D88A6E" opacity="0.5" stroke="#1C1917" stroke-width="2.4" stroke-linejoin="round" />
+
+              <!-- Subtle Geometric Face Mask -->
+              <path d="M140 135 C170 120, 230 120, 260 135 C250 170, 230 185, 200 185 C170 185, 150 170, 140 135 Z" 
+                    fill="#F7F3EB" stroke="#1C1917" stroke-width="2" />
+
+              <!-- Stylized Ear Tufts -->
+              <path d="M145 105 L120 72 L162 90" fill="#D88A6E" stroke="#1C1917" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M255 105 L280 72 L238 90" fill="#D88A6E" stroke="#1C1917" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+
+              <!-- Left Eye -->
+              <circle cx="166" cy="158" r="26" fill="#FFFFFF" stroke="#1C1917" stroke-width="2.6" />
+              <circle cx="166" cy="158" r="13" fill="#E0B589" />
+              <circle cx="169" cy="155" r="6" fill="#1C1917" />
+              <circle cx="172" cy="152" r="2" fill="#FFFFFF" />
+
+              <!-- Right Eye -->
+              <circle cx="234" cy="158" r="26" fill="#FFFFFF" stroke="#1C1917" stroke-width="2.6" />
+              <circle cx="234" cy="158" r="13" fill="#E0B589" />
+              <circle cx="237" cy="155" r="6" fill="#1C1917" />
+              <circle cx="240" cy="152" r="2" fill="#FFFFFF" />
+
+              <!-- Beak -->
+              <polygon points="200,175 188,198 212,198" fill="#D88A6E" stroke="#1C1917" stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Chest Feather Chevron Details -->
+              <path d="M182 245 Q200 255 218 245" fill="none" stroke="#1C1917" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M176 268 Q200 279 224 268" fill="none" stroke="#1C1917" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M184 290 Q200 299 216 290" fill="none" stroke="#1C1917" stroke-width="2.2" stroke-linecap="round" />
+
+              <!-- Little Minimal Perch Feet -->
+              <circle cx="178" cy="336" r="4" fill="#1C1917" />
+              <circle cx="188" cy="336" r="4" fill="#1C1917" />
+              <circle cx="212" cy="336" r="4" fill="#1C1917" />
+              <circle cx="222" cy="336" r="4" fill="#1C1917" />
+            </svg>
+          </div>
+          <div class="mascot-caption">
+            <span class="caption-label">Site Mascot</span>
+            <span class="caption-title">The Watchful Owl</span>
+          </div>
+        </div>
+
+        <!-- About Text Content -->
+        <div class="about-text-block">
+          <span class="section-tag">Design Ethos</span>
+          <h2 class="section-heading">Grounded in calm simplicity and tactile warmth.</h2>
+          <p class="paragraph">
+            This space is built around a deliberate aesthetic: minimal geometric forms, warm linen textures, and the gentle contrast of hand-drawn ink contours against chalky earthy pigments.
+          </p>
+          <p class="paragraph">
+            Our mascot—the geometric owl—embodies quiet observation, curiosity, and patience. In a web saturated with noise and flashing animations, we prioritize readable typography, serene whitespace, and timeless composition.
+          </p>
+
+          <div class="palette-swatches" aria-label="Site Color Palette">
+            <div class="swatch" style="--swatch-color: #FAF7F2;" title="Linen White"></div>
+            <div class="swatch" style="--swatch-color: #F4EFE6;" title="Warm Beige"></div>
+            <div class="swatch" style="--swatch-color: #E0B589;" title="Soft Ochre"></div>
+            <div class="swatch" style="--swatch-color: #D88A6E;" title="Muted Terracotta"></div>
+            <div class="swatch" style="--swatch-color: #9AA685;" title="Soft Sage"></div>
+            <div class="swatch" style="--swatch-color: #1C1917;" title="Ink Black"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Three Pillars / Card Images Section -->
+    <section id="pillars" class="pillars-section container">
+      <div class="section-header-center">
+        <span class="section-tag">Core Disciplines</span>
+        <h2 class="section-heading">Three focal points of my daily practice.</h2>
+        <p class="section-lead">Each represented by a dedicated minimalist line & shape artwork.</p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- Card 1: Ideas & Thinking (Stones & Leaf) -->
+        <article class="pillar-card">
+          <div class="card-visual-wrapper">
+            <!-- Card 1 SVG (Square 1:1) -->
+            <svg viewBox="0 0 400 400" class="card-svg" role="img" aria-label="Minimalist balanced stones and leaf illustration">
+              <rect width="400" height="400" fill="#F4EFE6" rx="12" />
+              
+              <!-- Subtle Background Ring -->
+              <circle cx="200" cy="200" r="140" fill="none" stroke="#EBE4D5" stroke-width="1.5" />
+              
+              <!-- Ground Shadow -->
+              <ellipse cx="200" cy="335" rx="80" ry="7" fill="#E3 DACB" />
+
+              <!-- Bottom Stone (Soft Chalk Sage) -->
+              <path d="M120 320 C110 280, 290 280, 280 320 C270 340, 130 340, 120 320 Z" 
+                    fill="#9AA685" opacity="0.75" stroke="#1C1917" stroke-width="2.5" />
+              
+              <!-- Middle Stone (Warm Chalk Terracotta) -->
+              <path d="M145 265 C135 225, 265 225, 255 265 C245 285, 155 285, 145 265 Z" 
+                    fill="#D88A6E" opacity="0.8" stroke="#1C1917" stroke-width="2.5" />
+
+              <!-- Top Stone (Linen Off-White) -->
+              <ellipse cx="200" cy="195" rx="42" ry="26" fill="#FFFFFF" stroke="#1C1917" stroke-width="2.5" />
+
+              <!-- Floating Accent Circle / Sun -->
+              <circle cx="265" cy="130" r="24" fill="#E0B589" stroke="#1C1917" stroke-width="2" />
+
+              <!-- Curving Botanical Leaf Arching from Left -->
+              <path d="M110 340 C110 240, 140 140, 185 95" fill="none" stroke="#1C1917" stroke-width="2.4" stroke-linecap="round" />
+              
+              <!-- Leaflets -->
+              <path d="M140 230 C115 220, 115 195, 135 205 C155 215, 150 235, 140 230 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8" />
+              <path d="M152 175 C130 160, 138 140, 154 150 C170 160, 168 180, 152 175 Z" fill="#9AA685" opacity="0.8" stroke="#1C1917" stroke-width="1.8" />
+              <path d="M174 125 C158 105, 172 90, 184 105 C196 120, 186 135, 174 125 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8" />
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Pillar I</span>
+            <h3 class="card-title">Ideas & Thinking</h3>
+            <p class="card-text">
+              Meditative essays on mental models, digital deceleration, and long-term perspectives in an age of constant notification.
+            </p>
+            <a href="#writing" class="card-link">Read Essays &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Projects & Craft (Architectural Arches) -->
+        <article class="pillar-card">
+          <div class="card-visual-wrapper">
+            <!-- Card 2 SVG (Square 1:1) -->
+            <svg viewBox="0 0 400 400" class="card-svg" role="img" aria-label="Minimalist architectural arches and steps illustration">
+              <rect width="400" height="400" fill="#F4EFE6" rx="12" />
+              
+              <!-- Background Architectural Sun Disc -->
+              <circle cx="210" cy="180" r="105" fill="#EAE3D6" />
+
+              <!-- Tall Outer Archway -->
+              <path d="M130 330 V180 C130 120, 270 120, 270 180 V330" 
+                    fill="#FFFFFF" stroke="#1C1917" stroke-width="2.6" stroke-linecap="round" />
+
+              <!-- Inner Nested Archway (Warm Terracotta Wash) -->
+              <path d="M165 330 V210 C165 165, 235 165, 235 210 V330" 
+                    fill="#D88A6E" opacity="0.75" stroke="#1C1917" stroke-width="2" />
+
+              <!-- Minimalist Linear Stairs / Podium -->
+              <line x1="100" y1="330" x2="300" y2="330" stroke="#1C1917" stroke-width="2.6" stroke-linecap="round" />
+              <line x1="115" y1="315" x2="285" y2="315" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+              <line x1="130" y1="300" x2="270" y2="300" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+              <line x1="145" y1="285" x2="255" y2="285" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+
+              <!-- Floating Geometric Accent Sphere -->
+              <circle cx="290" cy="115" r="20" fill="#9AA685" opacity="0.85" stroke="#1C1917" stroke-width="2" />
+              
+              <!-- Delicate Vertical Plumb Line -->
+              <line x1="290" y1="135" x2="290" y2="220" stroke="#1C1917" stroke-width="1.5" stroke-dasharray="2 4" />
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Pillar II</span>
+            <h3 class="card-title">Projects & Craft</h3>
+            <p class="card-text">
+              Clean interfaces, deliberate design systems, and robust software architectures engineered to remain maintainable over decades.
+            </p>
+            <a href="#work" class="card-link">View Portfolio &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Connect & Contact (Envelope & Olive Branch) -->
+        <article class="pillar-card">
+          <div class="card-visual-wrapper">
+            <!-- Card 3 SVG (Square 1:1) -->
+            <svg viewBox="0 0 400 400" class="card-svg" role="img" aria-label="Minimalist folded envelope with olive branch and sun illustration">
+              <rect width="400" height="400" fill="#F4EFE6" rx="12" />
+
+              <!-- Soft Chalk Sun in Background -->
+              <circle cx="200" cy="140" r="65" fill="#E0B589" opacity="0.8" stroke="#1C1917" stroke-width="2" />
+
+              <!-- Sprouting Botanical Stem rising from envelope -->
+              <path d="M200 270 C200 200, 205 130, 200 70" fill="none" stroke="#1C1917" stroke-width="2.4" stroke-linecap="round" />
+              
+              <!-- Sprouting Leaves -->
+              <path d="M198 160 C170 145, 175 125, 195 135 C215 145, 210 165, 198 160 Z" fill="#9AA685" opacity="0.9" stroke="#1C1917" stroke-width="1.8" />
+              <path d="M202 120 C228 105, 230 128, 212 135 C194 142, 190 125, 202 120 Z" fill="#FFFFFF" stroke="#1C1917" stroke-width="1.8" />
+              <path d="M200 70 C190 50, 210 50, 208 68 Z" fill="#D88A6E" stroke="#1C1917" stroke-width="1.8" />
+
+              <!-- Origami Envelope Fold Base -->
+              <polygon points="120,230 280,230 280,330 120,330" fill="#FFFFFF" stroke="#1C1917" stroke-width="2.6" stroke-linejoin="round" />
+              
+              <!-- Open Flap Behind (Folded back) -->
+              <polygon points="120,230 200,165 280,230" fill="#FAF7F2" stroke="#1C1917" stroke-width="2" stroke-linejoin="round" />
+
+              <!-- Interior Envelope Folds -->
+              <polyline points="120,330 200,270 280,330" fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" />
+              <polyline points="120,230 185,280" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" />
+              <polyline points="280,230 215,280" fill="none" stroke="#1C1917" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="card-meta">Pillar III</span>
+            <h3 class="card-title">Connect & Dialogue</h3>
+            <p class="card-text">
+              Open invitations for thoughtful collaboration, asynchronous dialogue, and exchange of curiosities from around the globe.
+            </p>
+            <a href="#contact" class="card-link">Initiate Note &rarr;</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Works & Gallery Section -->
+    <section id="work" class="work-section container">
+      <div class="section-header-split">
+        <div>
+          <span class="section-tag">Archive</span>
+          <h2 class="section-heading">Selected Creations</h2>
+        </div>
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="systems">Systems</button>
+          <button class="filter-btn" data-filter="editorial">Editorial</button>
+          <button class="filter-btn" data-filter="visual">Visual</button>
+        </div>
+      </div>
+
+      <div class="portfolio-list">
+        <div class="work-row" data-category="systems">
+          <div class="work-col-year">2026</div>
+          <div class="work-col-title">
+            <h4>Kanso Component Architecture</h4>
+            <span class="work-desc">A low-complexity state management design for resilient web tools.</span>
+          </div>
+          <div class="work-col-cat">Systems</div>
+          <div class="work-col-arrow">&rarr;</div>
+        </div>
+
+        <div class="work-row" data-category="visual">
+          <div class="work-col-year">2025</div>
+          <div class="work-col-title">
+            <h4>Tactile Linen Identity</h4>
+            <span class="work-desc">Explorations in digital materiality, subtle grain, and chalk palette vectors.</span>
+          </div>
+          <div class="work-col-cat">Visual</div>
+          <div class="work-col-arrow">&rarr;</div>
+        </div>
+
+        <div class="work-row" data-category="editorial">
+          <div class="work-col-year">2025</div>
+          <div class="work-col-title">
+            <h4>The Geometry of Solitude</h4>
+            <span class="work-desc">An essay on crafting private digital rooms away from algorithmic feeds.</span>
+          </div>
+          <div class="work-col-cat">Editorial</div>
+          <div class="work-col-arrow">&rarr;</div>
+        </div>
+
+        <div class="work-row" data-category="systems">
+          <div class="work-col-year">2024</div>
+          <div class="work-col-title">
+            <h4>Monochrome Ledger</h4>
+            <span class="work-desc">An offline-first personal accounting notebook with zero dependencies.</span>
+          </div>
+          <div class="work-col-cat">Systems</div>
+          <div class="work-col-arrow">&rarr;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <span class="section-tag">Correspondence</span>
+          <h2 class="section-heading">Send a quiet note.</h2>
+          <p class="contact-sub">Letters, inquiries, or gentle musings are always warmly received.</p>
+        </div>
+
+        <form id="contactForm" class="contact-form" onsubmit="event.preventDefault(); window.handleContactSubmit();">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" required placeholder="Elena Vance">
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" required placeholder="elena@domain.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" required placeholder="Share what is on your mind..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+        </form>
+
+        <div id="formSuccessMessage" class="form-feedback hidden">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="#1C1917" stroke-width="2" fill="none" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 12l2.5 2.5 L16 9"></path>
+          </svg>
+          <span>Thank you. Your message has drifted safely into our inbox.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">Atelier Nocture</span>
+        <span class="footer-copy">&copy; 2026. Handcrafted with minimal lines, chalk tones, and linen textures.</span>
+      </div>
+      <div class="footer-right">
+        <a href="#home">Return to Top &uarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
